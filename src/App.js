@@ -1,5 +1,3 @@
-import React from "react";
-import { ReactDOM } from "react-dom/client";
 import ExpenseItems from "./components/ExpenseItems";
 
 function App() {
