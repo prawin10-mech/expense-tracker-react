@@ -1,13 +1,16 @@
 import "./ExpenseItem.css";
+import ExpenseDate from "./ExpenseDate";
+import ExpenseDetails from "./ExpenseDetails";
+
 function ExpenseItems({ title, date, amount, LocationOfExpenditure }) {
   return (
     <div className="expense-item">
-      <div>{date.toISOString()}</div>
-      <div>{LocationOfExpenditure}</div>
-      <div className="expense-item__description">
-        <h2>{title}</h2>
-        <div className="expense-item__price">{amount}</div>
-      </div>
+      <ExpenseDate date={date} />
+      <ExpenseDetails
+        title={title}
+        amount={amount}
+        LocationOfExpenditure={LocationOfExpenditure}
+      />
     </div>
   );
 }
