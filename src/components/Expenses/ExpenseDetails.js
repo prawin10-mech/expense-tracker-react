@@ -1,7 +1,7 @@
 import "./ExpenseDetails.css";
-import Card from "./Card";
+import Card from "../UI/Card";
 
-function ExpenseDetails({ title, amount, LocationOfExpenditure }) {
+const ExpenseDetails = ({ title, amount, LocationOfExpenditure }) => {
   return (
     <Card className="expense-item__description">
       <div>{LocationOfExpenditure}</div>
@@ -9,6 +9,6 @@ function ExpenseDetails({ title, amount, LocationOfExpenditure }) {
       <div className="expense-item__price">{amount}</div>
     </Card>
   );
-}
+};
 
 export default ExpenseDetails;

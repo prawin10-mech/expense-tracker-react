@@ -1,6 +1,8 @@
-import ExpenseItems from "./components/ExpenseItems";
+import ExpenseItems from "./components/Expenses/ExpenseItems";
+import "../public/app.css";
+import Card from "./components/UI/Card";
 
-function App() {
+const App = () => {
   const expenses = [
     {
       id: 1,
@@ -34,11 +36,13 @@ function App() {
   return (
     <>
       <h1>Expense Items</h1>
-      {expenses.map((expense) => {
-        return <ExpenseItems {...expense} />;
-      })}
+      <Card className="container">
+        {expenses.map((expense) => {
+          return <ExpenseItems {...expense} />;
+        })}
+      </Card>
     </>
   );
-}
+};
 
 export default App;
