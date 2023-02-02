@@ -5,7 +5,7 @@ import Card from "./components/UI/Card";
 const App = () => {
   const expenses = [
     {
-      id: 1,
+      id: 0,
       title: "Movie veerayya",
       amount: 299,
       date: new Date(2023, 0, 23),
