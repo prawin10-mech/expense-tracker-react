@@ -34,10 +34,16 @@ const App = () => {
       LocationOfExpenditure: "ramachandra puram",
     },
   ];
+
+  const addExpenseHandler = (expense) => {
+    console.log("hello");
+    console.log(expense);
+    expenses.push(expense);
+  };
   return (
     <>
       <h1>Expense Items</h1>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Card className="container">
         {expenses.map((expense) => {
           return <ExpenseItems {...expense} />;
