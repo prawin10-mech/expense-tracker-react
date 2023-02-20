@@ -4,6 +4,7 @@ import "../public/app.css";
 import Card from "./components/UI/Card";
 import NewExpense from "./components/NewExpenses/NewExpense";
 import FilterExpense from "./components/Expenses/FilterExpenses";
+import ExpenseChart from "./components/Expenses/ExpensesChart";
 
 const DUMMY_EXPENSES = [
   {
@@ -53,6 +54,7 @@ const App = () => {
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
+      <ExpenseChart expenses={expenses} />
       <Card className="container">
         {expenses.map((expense) => {
           return <ExpenseItems {...expense} />;
