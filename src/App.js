@@ -3,6 +3,7 @@ import ExpenseItems from "./components/Expenses/ExpenseItems";
 import "../public/app.css";
 import Card from "./components/UI/Card";
 import NewExpense from "./components/NewExpenses/NewExpense";
+import FilterExpense from "./components/Expenses/FilterExpenses";
 
 const DUMMY_EXPENSES = [
   {
@@ -36,6 +37,11 @@ const DUMMY_EXPENSES = [
 ];
 const App = () => {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
+  const [filteredYear, setFilteredYear] = useState("2020");
+
+  const filterChangeHandler = (selectedYear) => {
+    setFilteredYear(selectedYear);
+  };
   const addExpenseHandler = (expense) => {
     setExpenses([...expenses, expense]);
   };
@@ -43,6 +49,10 @@ const App = () => {
     <>
       <h1>Expense Items</h1>
       <NewExpense onAddExpense={addExpenseHandler} />
+      <FilterExpense
+        selected={filteredYear}
+        onChangeFilter={filterChangeHandler}
+      />
       <Card className="container">
         {expenses.map((expense) => {
           return <ExpenseItems {...expense} />;
